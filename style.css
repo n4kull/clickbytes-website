@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css?family=DM%20Sans:700|DM%20Sans:400');
+
+/* Global Variables */
+:root[data-theme="light"] {
+    --text: #0a0b1f;
+    --background: #dcdce5;
+    --primary: #4e6ac1;
+    --secondary: #15239d;
+    --accent: #2c7cba;
+    --header-footer: #a9a9fc;
+}
+
+:root[data-theme="dark"] {
+    --text: #e1e2f5;
+    --background: #23263a;
+    --primary: #3f5bb1;
+    --secondary: #6472ea;
+    --accent: #4797d4;
+    --header-footer: #131525;
+}
+/* body styling */
+body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+    margin: 10px 10px;
+    
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+h2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+}
+
+/* Hide ScrollBars */
+/* For Webkit Browsers (Chrome, Safari, Edge) */
+/* ::-webkit-scrollbar {
+    display: none;
+}
+
+/* For Firefox */
+/* html {
+    scrollbar-width: none;
+} */
+
+/* typography */
+html { font-size: 100%; } /* 16px */
+h1 { font-size: 4.210rem; /* 67.36px */ }
+h2 { font-size: 3.158rem; /* 50.56px */ }
+h3 { font-size: 2.369rem; /* 37.92px */ }
+h4 { font-size: 1.777rem; /* 28.48px */ }
+h5 { font-size: 1.333rem; /* 21.28px */ }
+small { font-size: 0.750rem; /* 12px */ }
+
+/* For responsive layout */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Theme Transition */
+.theme-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--background); /* Initial background */
+    z-index: 9999;
+    pointer-events: none; /* Prevent interaction */
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.theme-overlay.show {
+    opacity: 1;
+}
+
+/* Navbar Styling */
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: var(--header-footer);
+    color: var(--text);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease-in-out;
+    box-sizing: border-box;
+    border-radius: 10px;
+
+    /* Glass Effect */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1)); 
+    backdrop-filter: blur(10px); /* Frosted Glass Effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari Support */
+    border: px solid rgba(255, 255, 255, 0.3); /* Subtle Border */
+}
+
+
+/* NavBar Logo */
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* NavBar Links */
+.nav-links {
+    align-items: center;
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+/* Theme Toggle Slider */
+.switch {
+    position: relative;
+    width: 50px;
+    height: 26px;
+    display: inline-block;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    background: #ccc;
+    border-radius: 50px;
+    transition: 0.4s;
+    width: 100%;
+    height: 100%;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+    background: white;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background: var(--primary);
+}
+
+input:checked + .slider::before {
+    transform: translateX(24px);
+}
