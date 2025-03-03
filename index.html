@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ClickBytes</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -13,20 +14,26 @@
 
     <!-- Navbar -->
     <nav class="navbar">
-        <div class="logo">ClickBytes</div>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
+        <!-- Left Nav -->
+        <ul class="nav-left">
             <li><a href="#">About</a></li>
             <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
         </ul>
-        <!-- Theme Toggle Switch -->
-        <label class="switch">
-            <input type="checkbox" id="theme-toggle">
-            <span class="slider"></span>
-        </label>
+
+        <!-- Center Logo -->
+        <div class="nav-center">ClickBytes</div>
+
+        <!-- Right Nav + Theme Toggle -->
+        <div class="nav-right-container">
+            <ul class="nav-right">
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <button id="theme-toggle">
+                <img id="theme-icon" src="moon96.png" alt="Theme Toggle">
+            </button>
+        </div>
     </nav>
-   <h2>This website is under constrcution.</h2>
+    <h2>This website is under constrcution.</h2>
 </body>
 
 </html>

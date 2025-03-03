@@ -1,12 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const toggleInput = document.getElementById("theme-toggle"); // Get the theme toggle switch
+    const themeToggle = document.getElementById("theme-toggle");
+    const themeIcon = document.getElementById("theme-icon");
     const html = document.documentElement; // Get the root <html> element
-
-    // Ensure the toggle button exists to prevent errors
-    if (!toggleInput) {
-        console.error("Theme toggle input not found!");
-        return;
-    }
 
     // Check if the user's system prefers dark mode
     const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -16,30 +11,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Apply the selected theme
     html.setAttribute("data-theme", savedTheme);
-    toggleInput.checked = savedTheme === "dark"; // Sync toggle with theme
+    themeIcon.src = savedTheme === "dark" ? "sun96.png" : "moon96.png";
 
     // Create an overlay div for smooth transition
     const overlay = document.createElement("div");
     overlay.classList.add("theme-overlay");
     document.body.appendChild(overlay);
 
-    toggleInput.addEventListener("change", () => {
+    themeToggle.addEventListener("click", () => {
         // Step 1: Capture current background color before switching theme
-        overlay.style.background = getComputedStyle(html).getPropertyValue("--background"); 
+        overlay.style.background = getComputedStyle(html).getPropertyValue("--background");
         overlay.style.opacity = "1"; // Step 2: Fade in overlay
 
-        // Step 3: Change theme after fade-in is complete
         setTimeout(() => {
-            const newTheme = toggleInput.checked ? "dark" : "light";
+            // Step 3: Toggle theme
+            let newTheme = html.getAttribute("data-theme") === "dark" ? "light" : "dark";
             html.setAttribute("data-theme", newTheme);
             localStorage.setItem("theme", newTheme);
 
-        // Step 4: Fade out overlay after a short delay
-        setTimeout(() => {
-            overlay.style.opacity = "0";
-        }, 100); 
-        }, 500); // Wait 500ms for fade-in effect before switching theme
+            // Step 4: Update theme icon
+            themeIcon.src = newTheme === "dark" ? "images/sun96.png" : "images/moon96.png";
+
+            // Step 5: Fade out overlay after theme switch
+            setTimeout(() => {
+                overlay.style.opacity = "0";
+            }, 200);
+        }, 100); // Wait 100ms before switching theme for a smooth effect
     });
-
-
 });

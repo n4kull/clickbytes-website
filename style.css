@@ -100,87 +100,79 @@ small { font-size: 0.750rem; /* 12px */ }
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 5px 10px;
     background: var(--header-footer);
     color: var(--text);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     transition: background 0.3s ease-in-out;
     box-sizing: border-box;
     border-radius: 10px;
+    position: relative;
+    padding-left: 10px;
 
     /* Glass Effect */
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1)); 
     backdrop-filter: blur(10px); /* Frosted Glass Effect */
     -webkit-backdrop-filter: blur(10px); /* Safari Support */
-    border: px solid rgba(255, 255, 255, 0.3); /* Subtle Border */
 }
 
-
-/* NavBar Logo */
-.logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    letter-spacing: 1px;
+a {
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Makes links inherit the text color */
 }
 
-/* NavBar Links */
-.nav-links {
-    align-items: center;
+/* Left Nav */
+.nav-left {
     display: flex;
+    align-items: center;
     list-style: none;
     gap: 20px;
 }
 
-.nav-links a {
-    text-decoration: none;
-    color: var(--text);
-    font-weight: 500;
-    transition: color 0.3s ease-in-out;
-}
-.nav-links a:hover {
-    color: var(--primary);
-}
-
-/* Theme Toggle Slider */
-.switch {
-    position: relative;
-    width: 50px;
-    height: 26px;
-    display: inline-block;
-}
-
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.slider {
+/* Center Logo */
+.nav-center {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
     position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap; /* Prevents wrapping */
+}
+
+/* Right Nav Wrapper (for nav-right + theme toggle) */
+.nav-right-container {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Adds spacing between nav-right & theme-toggle */
+}
+
+/* Right Nav */
+.nav-right {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 15px;
+    background-color: var(--text);
+    padding: 5px 10px;
+    border-radius: 15px;
+    color: var(--background);
+}
+
+/* Theme Toggle */
+#theme-toggle {
+    background: none;
+    border: none;
     cursor: pointer;
-    background: #ccc;
-    border-radius: 50px;
-    transition: 0.4s;
-    width: 100%;
-    height: 100%;
+    padding: 5px;
 }
 
-.slider::before {
-    content: "";
-    position: absolute;
-    height: 18px;
-    width: 18px;
-    left: 4px;
-    bottom: 4px;
-    background: white;
-    border-radius: 50%;
-    transition: 0.4s;
+#theme-toggle img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease-in-out;
 }
 
-input:checked + .slider {
-    background: var(--primary);
-}
-
-input:checked + .slider::before {
-    transform: translateX(24px);
+#theme-toggle:active img {
+    transform: scale(0.9);
 }
