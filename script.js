@@ -7,11 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
     // Retrieve saved theme from localStorage, or use system preference
-    let savedTheme = localStorage.getItem("theme") || (systemPrefersDark ? "dark" : "light");
+    let savedTheme = localStorage.getItem("theme") || (systemPrefersDark ? "https://github.com/n4kull/clickbytes-website/blob/main/images/sun96.png" : "https://github.com/n4kull/clickbytes-website/blob/main/images/moon96.png");
 
     // Apply the selected theme
     html.setAttribute("data-theme", savedTheme);
-    themeIcon.src = savedTheme === "dark" ? "sun96.png" : "moon96.png";
+    themeIcon.src = savedTheme === "dark" ? "https://github.com/n4kull/clickbytes-website/blob/main/images/sun96.png" : "https://github.com/n4kull/clickbytes-website/blob/main/images/moon96.png";
 
     // Create an overlay div for smooth transition
     const overlay = document.createElement("div");
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
             localStorage.setItem("theme", newTheme);
 
             // Step 4: Update theme icon
-            themeIcon.src = newTheme === "dark" ? "images/sun96.png" : "images/moon96.png";
+            themeIcon.src = newTheme === "dark" ? "https://github.com/n4kull/clickbytes-website/blob/main/images/sun96.png" : "https://github.com/n4kull/clickbytes-website/blob/main/images/moon96.png";
 
             // Step 5: Fade out overlay after theme switch
             setTimeout(() => {
