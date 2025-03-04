@@ -28,8 +28,8 @@ body {
     flex-direction: column;
     transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
     margin: 10px 10px;
-    
 }
+
 
 html, body {
     overflow-x: hidden;
@@ -206,21 +206,21 @@ a {
 .dock-links a {
     text-decoration: none;
     color: white;
-    font-size: 14px;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 5px;
+    transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.dock-links a:hover {
+    transform: translateY(-5px); /* Moves the icon up slightly on hover */
 }
 
 .floating-button{
     display: none;
 }
 
-/* Hover Effect */
-.dock-links a:hover {
-    color: #f0a500;
-}
 
 @media screen and (max-width: 768px) {
     .nav-left {
@@ -257,4 +257,24 @@ a {
     .bottom-nav{
         display: flex;
     }
+}
+
+.dock-icon{
+    filter: invert(1);
+    width: 30%;
+    height: auto;
+}
+
+.floating-button{
+    position: absolute;
+    bottom: 15%;
+    height: 48px;
+    width: 48px;
+    background-color: var(--accent);
+    border-radius: 50%;
+}
+.chat-icon{
+    width: 60%;
+    padding: 20%;
+    filter: invert(1);
 }

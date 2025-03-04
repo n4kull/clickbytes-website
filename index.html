@@ -13,7 +13,7 @@
 
 <body>
     <script src="script.js"></script>
-
+    <span class="fi-rr-home"></span>
     <!-- Navbar -->
     <nav class="navbar">
         <!-- Left Nav -->
@@ -43,16 +43,26 @@
     <!-- Menu Visible On Phones Only-->
     <nav class="bottom-nav">
         <ul class="dock-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
+            <li><a href="#">
+                <img src="/assets/icons/home.png" alt="home-icon" class="dock-icon">
+                <div class="icon-hint"> Home</div>
+            </a></li>
+            <li><a href="#">
+                <img src="/assets/icons/info.png" alt="info-icon" class="dock-icon">
+            </a></li>
+            <li><a href="#">
+                <img src="/assets/icons/services.png" alt="services" class="dock-icon">
+            </a></li>
         </ul>
     </nav>
     <!-- Conatct button floating near dock -->
     <div class="floating-button">
-        <button id="contact">C</button>
+        <a href="#">
+            <img src="/assets/icons/chat.png" alt="chat-icon" class="chat-icon">
+        </a>
     </div>
     <h2>This website is under constrcution.</h2>
+    
 </body>
 
 </html>
