@@ -99,8 +99,8 @@ small { font-size: 0.750rem; /* 12px */ }
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 5px 10px;
+    align-items: center; /* Ensures vertical alignment */
+    padding: 5px 15px; /* Adjust padding as needed */
     background: var(--header-footer);
     color: var(--text);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -111,20 +111,20 @@ small { font-size: 0.750rem; /* 12px */ }
     padding-left: 10px;
 
     /* Glass Effect */
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1)); 
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
     backdrop-filter: blur(10px); /* Frosted Glass Effect */
     -webkit-backdrop-filter: blur(10px); /* Safari Support */
 }
 
 a {
-    text-decoration: none; /* Removes underline */
-    color: inherit; /* Makes links inherit the text color */
+    text-decoration: none;
+    color: inherit;
 }
 
 /* Left Nav */
 .nav-left {
     display: flex;
-    align-items: center;
+    align-items: center; /* Ensures vertical alignment */
     list-style: none;
     gap: 20px;
 }
@@ -137,24 +137,24 @@ a {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    white-space: nowrap; /* Prevents wrapping */
+    white-space: nowrap;
 }
 
 /* Right Nav Wrapper (for nav-right + theme toggle) */
 .nav-right-container {
     display: flex;
-    align-items: center;
-    gap: 15px; /* Adds spacing between nav-right & theme-toggle */
+    align-items: center; /* Ensures vertical alignment */
+    gap: 15px;
 }
 
 /* Right Nav */
 .nav-right {
     display: flex;
-    align-items: center;
+    align-items: center; /* Ensures vertical alignment */
     list-style: none;
     gap: 15px;
     background-color: var(--text);
-    padding: 5px 10px;
+    padding: 0px 10px; /*removed vertical padding*/
     border-radius: 15px;
     color: var(--background);
 }
@@ -175,4 +175,86 @@ a {
 
 #theme-toggle:active img {
     transform: scale(0.9);
+}
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #222;
+    padding: 10px 0;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+/* Dock Links */
+.dock-links {
+    display: flex;
+    justify-content: space-between; /* Spreads links across the navbar */
+    align-items: center;
+    width: 100%;
+    padding: 0 20px; /* Optional padding */
+}
+
+/* Bottom Navbar Links */
+.dock-links li {
+    flex: 1; /* Makes each link evenly take up space */
+    text-align: center; /* Centers text inside each item */
+    list-style: none;
+}
+
+.dock-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+}
+
+.floating-button{
+    display: none;
+}
+
+/* Hover Effect */
+.dock-links a:hover {
+    color: #f0a500;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-left {
+        display: none;
+    }
+
+    .nav-right-container {
+        display: none;
+    }
+
+    .floating-button {
+        display: block;
+        position: absolute;
+        bottom: 10%;
+        right: 5%;
+    }
+
+    #contact{
+        border-radius: 50%;
+    }
+
+    .navbar {
+        padding: 10px 15px; /* Adjust padding as needed, but minimize it */
+        justify-content: center; /* Center the nav-center horizontally */
+    }
+
+    .nav-center {
+        position: static; /* Remove absolute positioning */
+        transform: none; /* Remove transform */
+        left: auto; /* Remove left positioning */
+        text-align: center; /* Center text */
+        width: 100%; /* Make it take the full width */
+    }
+    .bottom-nav{
+        display: flex;
+    }
 }
