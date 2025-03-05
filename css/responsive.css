@@ -1,0 +1,24 @@
+@media screen and (max-width: 768px) {
+
+    .dock, .floating-button{
+        display: flex;
+    }
+    
+    .nav-left, #nav-contact{
+        display: none;
+    }
+
+    .navbar {
+        padding: 10px 15px;
+        justify-content: space-between;
+    }
+
+    .nav-center {
+        position: static;
+        transform: none;
+        left: auto;
+        text-align: center;
+        width: 100%;
+    }
+
+}

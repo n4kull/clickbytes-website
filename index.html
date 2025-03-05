@@ -6,63 +6,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ClickBytes</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon"
-        href="https://raw.githubusercontent.com/n4kull/clickbytes-website/refs/heads/main/images/favicon.ico"
-        type="image/x-icon">
+    <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
     <script src="script.js"></script>
-    <span class="fi-rr-home"></span>
+    <script src="/js/theme.js"></script>
     <!-- Navbar -->
-    <nav class="navbar">
-        <!-- Left Nav -->
-        <ul class="nav-left">
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-        </ul>
+    <div id="navbar-container"></div>
 
-        <!-- Center Logo -->
-        <div class="nav-center">ClickBytes</div>
+    <!-- Dock -->
+    <div id="dock-container"></div>
 
-        <!-- Right Nav + Theme Toggle -->
-        <div class="nav-right-container">
-            <ul class="nav-right">
-                <li><a href="#">Contact Us</a></li>
-            </ul>
-
-            <button id="theme-toggle">
-                <img id="theme-icon"
-                    src="https://raw.githubusercontent.com/n4kull/clickbytes-website/refs/heads/main/images/moon96.png"
-                    alt="Theme Toggle">
-            </button>
-
-        </div>
-    </nav>
-
-    <!-- Menu Visible On Phones Only-->
-    <nav class="bottom-nav">
-        <ul class="dock-links">
-            <li><a href="#">
-                <img src="/assets/icons/home.png" alt="home-icon" class="dock-icon">
-                <div class="icon-hint"> Home</div>
-            </a></li>
-            <li><a href="#">
-                <img src="/assets/icons/info.png" alt="info-icon" class="dock-icon">
-            </a></li>
-            <li><a href="#">
-                <img src="/assets/icons/services.png" alt="services" class="dock-icon">
-            </a></li>
-        </ul>
-    </nav>
-    <!-- Conatct button floating near dock -->
-    <div class="floating-button">
-        <a href="#">
-            <img src="/assets/icons/chat.png" alt="chat-icon" class="chat-icon">
-        </a>
-    </div>
     <h2>This website is under constrcution.</h2>
+
+    <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex dicta omnis tempore maxime, assumenda laboriosam optio praesentium libero repellendus ratione voluptate sapiente quam ab deleniti iusto nemo explicabo neque sequi.</h3>
     
+    <!-- Hero Section -->
+<section id="hero" class="hero">
+    <div class="container">
+        <h1>Drive Growth & Maximize Your Online Presence</h1>
+        <p>We help businesses like yours achieve measurable results through strategic digital marketing solutions.</p>
+        <a href="#contact" class="btn">Get a Free Consultation</a>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="services">
+    <div class="container">
+        <h2>Our Digital Marketing Services</h2>
+        <div class="service-list">
+            <div class="service">
+                <img src="assets/seo.png" alt="SEO">
+                <h3>SEO Optimization</h3>
+                <p>Improve your website's visibility and drive organic traffic.</p>
+            </div>
+            <div class="service">
+                <img src="assets/ppc.png" alt="PPC Advertising">
+                <h3>PPC Advertising</h3>
+                <p>Reach your target audience instantly with high-impact ads.</p>
+            </div>
+            <div class="service">
+                <img src="assets/social-media.png" alt="Social Media">
+                <h3>Social Media Marketing</h3>
+                <p>Engage with your audience and grow your brand online.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about">
+    <div class="container">
+        <h2>Why Choose Us?</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>We specialize in helping businesses like yours grow through cutting-edge digital marketing strategies.</p>
+                <p>With a team of expert marketers, we craft customized strategies that drive real results.</p>
+            </div>
+            <div class="about-image">
+                <img src="assets/team.jpg" alt="Our Team">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+    <div class="container">
+        <h2>Let's Work Together</h2>
+        <p>Have a project in mind? Reach out and let's make it happen!</p>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <p>&copy; 2024 ClickBytes. All Rights Reserved.</p>
+    </div>
+</footer>
+</body>
+</html>
 </body>
 
 </html>

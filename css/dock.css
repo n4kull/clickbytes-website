@@ -1,0 +1,85 @@
+/* DOCK: ONLY VISIBLE IN RESPONSIVE LAYOUT*/
+
+.dock {
+    position: fixed;
+    bottom: 0;
+    left: 5%;
+    width: 90%;
+    height: 7%;
+    border-radius: 20px 20px 0px 0px;
+    background: var(--accent);
+    padding: 5px 0px;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+    display: none;
+
+    /* Glass Effect */
+    background: linear-gradient(135deg, rgba(35, 38, 58, 0.2), rgba(255, 255, 255, 0.2));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Dock Links */
+.dock-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+}
+
+/* Bottom Navbar Links */
+.dock-links li {
+    flex: 1;
+    text-align: center;
+    list-style: none;
+}
+
+.dock-links a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    font-size: 14px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.dock-links img {
+    transition: transform 0.3s ease;
+}
+
+.dock-links img:hover {
+    transform: translateY(-5px) scale(1.1);
+}
+
+.dock-links a:hover {
+    color: rgb(221, 221, 221);
+    transform: translateY(-2px);
+}
+
+.dock-icon {
+    width: 20%;
+    height: auto;
+}
+
+.icon-hint{
+    font-weight: bold;
+}
+
+.floating-button{
+    position: fixed;
+    bottom: 10%;
+    right: 5%;
+    height: 48px;
+    width: 48px;
+    background-color: var(--accent);
+    border-radius: 50%;
+    display: none;
+}
+.chat-icon{
+    width: 60%;
+    padding: 20%;
+    filter: invert(1);
+}
+/* ---------------- */

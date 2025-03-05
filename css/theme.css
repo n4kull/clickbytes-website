@@ -1,1 +1,73 @@
-/* Theme CSS File */ 
+/* Global Variables */
+:root[data-theme="light"] {
+    --text: #0a0b1f;
+    --background: #dcdce5;
+    --primary: #4e6ac1;
+    --secondary: #15239d;
+    --accent: #2c7cba;
+    --header-footer: #a9a9fc;
+
+    #nav-logo {
+        filter: invert(1);
+    }
+    .icon-hint{
+        color: black;
+    }
+}
+
+:root[data-theme="dark"] {
+    --text: #e1e2f5;
+    --background: rgb(35, 38, 58);
+    --primary: #3f5bb1;
+    --secondary: #6472ea;
+    --accent: #4797d4;
+    --header-footer: #131525;
+
+    #theme-icon,
+    .dock-icon {
+        filter: invert(1);
+    }
+}
+
+/* Theme Overlay */
+.theme-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--background); /* This will update dynamically */
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1000ms ease-in-out; /* Smooth transition */
+}
+
+/* Fade in effect */
+.theme-overlay.show {
+    opacity: 1;
+}
+
+/* Theme Icon Fade Effect */
+#theme-icon {
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+/* Theme Toggle */
+#theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+#theme-toggle img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease-in-out;
+}
+
+#theme-toggle:active img {
+    transform: scale(0.9) rotate(15deg);
+    opacity: 0.7;
+}
